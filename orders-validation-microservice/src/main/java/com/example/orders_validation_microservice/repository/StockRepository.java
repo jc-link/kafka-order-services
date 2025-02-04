@@ -5,11 +5,12 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.mongodb.repository.MongoRepository;
 import org.springframework.stereotype.Repository;
 
+import javax.swing.text.html.Option;
 import java.util.Optional;
 
 @Repository
-public interface StockRepository extends MongoRepository<Product, Long> {
+public interface StockRepository extends MongoRepository<Product, String> {
 
-    // Add a method to find a stock by product name
-    Optional<Product> findByProduct(String product);
+    Optional<Product> findByName(String name);
+
 }

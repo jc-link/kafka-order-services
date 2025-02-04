@@ -1,20 +1,18 @@
-package com.example.orders_validation_microservice.entity;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
-import jakarta.persistence.GenerationType;
+package com.dev.product_microservice.model;
+
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.springframework.data.mongodb.core.mapping.Document;
+import org.springframework.data.mongodb.core.mapping.MongoId;
 
-@Document(collection = "products")
 @Data
-@AllArgsConstructor
 @NoArgsConstructor
+@AllArgsConstructor
+@Document(collection = "products")
 public class Product {
 
-    @Id
+    @MongoId
     private String id;
     private String name;
     private Integer quantity;
